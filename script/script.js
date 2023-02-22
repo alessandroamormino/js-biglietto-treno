@@ -26,8 +26,27 @@ x calcolo il prezzo del biglietto scontato al 40% arrotondato alla seconda cifra
 
 */
 
-const numKm = prompt('Quanti chilometri devi percorrere?');
-const userAge = prompt('Quanti anni hai?');
+// Controllo se è stato inserito effettivamente qualcosa e nel caso chiedo nuovamente di inserirlo. 
+// Il programma fallisce se l'utente non inserisce niente per la seconda volta. Per farlo funzionare serve un ciclo while.
+
+let numKm = prompt('Quanti chilometri devi percorrere?');
+
+if (numKm == null){
+    alert('Devi inserire un numero di Km');
+    numKm = prompt('Quanti chilometri devi percorrere?');
+} else {
+    numKm = parseInt(numKm);
+}
+
+let userAge = prompt('Quanti anni hai?');
+
+if (userAge == null){
+    alert('Devi inserire la tua età');
+    userAge = prompt('Quanti anni hai?');
+} else {
+    userAge = parseInt(userAge);
+}
+
 
 // Calcolo prezzo senza sconti
 let tktPrice = numKm * 0.21;
